@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/checkout.css">
+        
+        <script src="js/form.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>Checkout Page</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="Assets/logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a id="navlink" href="index.html">Home</a></li>
+    
+                    <li><a id="navlink" href="shoes.html">Shoes</a></li>
+                    <li><a id="navlink" href="accessories.html">Accessories</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="product-container">
+            <img src="" alt="" id="currentProduct">
+
+            <div class="container">
+                <span id="productName"></span>
+                <span id="productPrice"></span>
+                
+                <input type="number" name="qty" id="qty" value="1">
+                <label for="qty"></label>
+
+                <span id="totalPrice"></span>
+            </div>
+        </section>
+        
+        <form name="form" class="container" onsubmit="return validate()">
+            <h3>Checkout Form</h3>
+
+            <div id="frame">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="phonenumber" id="phonenumber" required>
+                    <label for="phonenumber">Phone Number</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="address" id="address" required>
+                    <label for="address">Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="postalCode" id="postalCode" required>
+                    <label for="postalCode">Postal Code</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="notes" id="notes">
+                    <label for="notes">Additional Notes</label>
+                </div>
+                <div class="">
+                    <label for="paymentMethod">Payment Method</label>
+                    <br>
+                    <select name="paymentMethod" id="paymentMethod">
+                        <option disabled selected value>Select Payment Method</option>
+                        <optgroup label="e-Money">
+                            <option value="QRIS">QRIS</option>
+                            <option value="OVO">OVO</option>
+                            <option value="Dana">Dana</option>
+                            <option value="Go-Pay">Go-Pay</option>
+                        </optgroup>
+                        <optgroup label="Virtual Account">
+                            <option value="Virtual Account BCA">Virtual Account BCA</option>
+                            <option value="Virtual Account Mandiri">Virtual Account Mandiri</option>
+                            <option value="Virtual Account BNI">Virtual Account BNI</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span id="errMsg" style="color: red"></span>
+                </div>
+                <div>
+                    <span id="paymentLink" style="color: blue;"></span>
+                </div>
+                <div class="form-group">
+                    <span id="QRSpan" style="visibility: hidden;">Please scan the following QR!</span>
+                    <br><br>
+                    <img src="" alt="" id="QRCODE">
+                </div>  
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+
+    </body>
+</html>
