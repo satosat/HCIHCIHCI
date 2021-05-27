@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap-4-dev/dist/css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
 </head>
 <body>
     <header>
@@ -30,28 +30,28 @@
 
             <div class="mySlides fade">
                 <div class="numbertext"></div>
-                <img src="Assets/carousel4.png" style="width:100%">
+                <img src="Assets/carousel/carousel4.png" style="width:100%">
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext"></div>
-                <img src="Assets/carousel1.png" style="width:100%">
+                <img src="Assets/carousel/carousel1.png" style="width:100%">
             </div>  
         
             <div class="mySlides fade">
                 <div class="numbertext"></div>
-                <img src="Assets/carousel2.png" style="width:100%">
+                <img src="Assets/carousel/carousel2.png" style="width:100%">
             </div>
         
             <div class="mySlides fade">
                 <div class="numbertext"></div>
-                <img src="Assets/carousel3.png" style="width:100%">
+                <img src="Assets/carousel/carousel3.png" style="width:100%">
             </div>
 
 
             <div class="mySlides fade">
                 <div class="numbertext"></div>
-                <img src="Assets/carousel5.png" style="width:100%">
+                <img src="Assets/carousel/carousel5.png" style="width:100%">
             </div>
         
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -60,57 +60,68 @@
         <br>
     </section>
 
-    <section id="Product" class="product-container headline">
+    <section id="new-arrival" class="product-container headline">
         <h1>New Arrival</h1>
 
         <div class="list-product accordion tagline">
             <div class="card-product">
-                <img src="Assets/shoe4.jpg" alt="">
+                <img src="Assets/shoe/shoe4.jpg"  class="image-click" id="img4">
             </div>
             <div class="card-product">
-                <img src="Assets/shoe5.jpeg" alt="">
+                <img src="Assets/shoe/shoe5.jpg"  class="image-click" id="img5" onclick="changePage(2)" id="2">
             </div>
             <div class="card-product">
-                <img src="Assets/shoe8.jpeg" alt="">
+                <img src="Assets/shoe/shoe8.jpeg" class="image-click"  id="img8">
             </div>
             <div class="card-product">
-                <img src="Assets/shoe9.jpg" alt="">
+                <img src="Assets/shoe/shoe9.jpg"  class="image-click" id="img9">
             </div>
             <div class="card-product">
-                <img src="Assets/shoe14.jpg" alt="">
+                <img src="Assets/shoe/shoe14.jpg" class="image-click"  id="img14">
             </div>
         </div>
-
-        <section id="Product" class="product-container headline">
-            <h1>Best Seller</h1>
-            <div class="list-product accordion tagline">
-                <div id="card1" class="card-product">
-                    <img src="Assets/shoe13.jpg" alt="">
-                </div>
-                <div class="card-product">
-                    <img src="Assets/shoe7.jpg" alt="">
-                </div>
-                <div class="card-product">
-                    <img src="Assets/shoe11.jpg" alt="">
-                </div>
-                <div class="card-product">
-                    <img src="Assets/shoe12.jpg" alt="">
-                </div>
-                <div class="card-product">
-                    <img src="Assets/shoe8.jpeg" alt="">
-                </div>
-                <div class="card-product">
-                    <img src="Assets/shoe10.jpg" alt="">
-                </div>
-            </div>
     </section>
 
-    <footer>
+    <section id="best-seller" class="product-container headline">
+        <h1>Best Seller</h1>
+        <div class="list-product accordion tagline">
+            <div class="card-product">
+                <img src="Assets/shoe/shoe13.jpg" class="image-click"  id="img13">
+            </div>
+            <div class="card-product">
+                <img src="Assets/shoe/shoe7.jpg"  class="image-click" id="img7">
+            </div>
+            <div class="card-product">
+                <img src="Assets/shoe/shoe15.jpg" class="image-click"  id="img15">
+            </div>
+            <div class="card-product">
+                <img src="Assets/shoe/shoe12.jpg" class="image-click"  id="img12">
+            </div>
+            <div class="card-product">
+                <img src="Assets/shoe/shoe8.jpeg" class="image-click"  id="img8">
+            </div>
+            <div class="card-product">
+                <img src="Assets/shoe/shoe10.jpg" class="image-click"  id="img10">
+            </div>
+        </div>
+    </section>
+
+    <footer class="product-container">
         <div style="padding: 40px auto;">
-            INI FOOTER
+            Ini Footer
         </div>
     </footer>
 
+    <script>
+        $(document).ready(function () {
+          $('.image-click').click(function() {
+            const imageSource = $(this).attr('src');
+            window.location.href = `checkout.html?imgsrc=${imageSource}`;
+          });
+        });
+    </script>
+
     <script src="js/home.js"></script>
+    <script src="js/gabung.js"></script>
 </body>
 </html>
